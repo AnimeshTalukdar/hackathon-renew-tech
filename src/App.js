@@ -4,11 +4,13 @@ import MainHeader from "./components/MainHeader";
 import Community from "./pages/Community";
 import Support from "./pages/Support";
 import About from "./pages/About";
+import Slider from "./components/Slider";
 
 function App() {
   return (
     <div className="App">
       <MainHeader></MainHeader>
+      <Slider></Slider>
       <main>
         <Routes>
           <Route path="/community" element={<Community></Community>}></Route>
