@@ -1,24 +1,14 @@
 import React, { useState } from 'react';
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 import { RxDotFilled } from 'react-icons/rx';
-
+import bgImage from '../images/bg2.jpg';
 const Slider = () => {
     const slides = [
         {
-            url: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2620&q=80',
+            url: `${bgImage}`,
         },
         {
-            url: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80',
-        },
-        {
-            url: 'https://images.unsplash.com/photo-1661961112951-f2bfd1f253ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2672&q=80',
-        },
-
-        {
-            url: 'https://images.unsplash.com/photo-1512756290469-ec264b7fbf87?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2253&q=80',
-        },
-        {
-            url: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2671&q=80',
+            url: 'https://www.freepik.com/free-vector/copy-space-bokeh-spring-lights-background_12229472.htm#query=go%20green%20background&position=11&from_view=keyword&track=ais',
         },
     ];
 
@@ -41,20 +31,21 @@ const Slider = () => {
     };
 
     return (
-        <div className="h-[580px] w-full m-auto  relative group">
-            <div className="text-center absolute left-1/2 top-1/2 text-white text-3xl">
-                <h1>Hello</h1>
+        <div className="h-[580px] w-full m-auto relative group">
+            <div className="absolute top-1/3 z-10 left-28">
+                <h1 className='text-white xl:text-5xl mb-5 lg:text-4xl md:text-3xl'>WELCOME TO RENEWTECH</h1>
+                <h2 className='text-white xl:text-2xl lg:text-lg md:text-base'>Empowering Innovation, Sustaining Progress</h2>
             </div>
             <div
                 style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
                 className='w-full h-full bg-center bg-cover duration-500 relative'
             >
-                <div className='flex justify-center py-2 relative top-full'>
+                <div className='flex justify-center py-2 absolute bottom-0 w-full'>
                     {slides.map((slide, slideIndex) => (
                         <div
                             key={slideIndex}
                             onClick={() => goToSlide(slideIndex)}
-                            className='text-2xl cursor-pointer'
+                            className='text-2xl cursor-pointer text-white'
                         >
                             <RxDotFilled />
                         </div>

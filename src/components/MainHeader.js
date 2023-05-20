@@ -1,9 +1,11 @@
 import { NavLink } from "react-router-dom";
 import classes from './MainHeader.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser,faCartShopping } from '@fortawesome/free-solid-svg-icons';
 const MainHeader = () => {
   return (
-    <header className="bg-[#A3BE8C] w-full p-3  h-12">
-      <nav className="flex flex-row justify-between text-white px-10">
+    <header className="bg-green-800 w-full p-3  h-12">
+      <nav className="flex flex-row justify-between text-white px-36">
         <div className="logo">RENEW TECH</div>
         <ul className="flex flex-row w-1/4 justify-between">
           <li>
@@ -23,6 +25,18 @@ const MainHeader = () => {
               if (navData.isActive) return classes.active;
               return "";
             }} to="/about">About</NavLink>
+          </li>
+          <li>
+            <NavLink className={(navData) => {
+              if (navData.isActive) return classes.active;
+              return "";
+            }} to="/user"><FontAwesomeIcon icon={faUser} /></NavLink>
+          </li>
+          <li>
+            <NavLink className={(navData) => {
+              if (navData.isActive) return classes.active;
+              return "";
+            }} to="/cart"><FontAwesomeIcon icon={faCartShopping} /></NavLink>
           </li>
         </ul>
       </nav>
