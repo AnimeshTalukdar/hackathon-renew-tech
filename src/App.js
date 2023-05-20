@@ -4,13 +4,11 @@ import MainHeader from "./components/MainHeader";
 import Community from "./pages/Community";
 import Support from "./pages/Support";
 import About from "./pages/About";
-import Slider from "./components/Slider";
 import Home from "./pages/Home";
 function App() {
   return (
     <div className="App">
       <MainHeader></MainHeader>
-      <Slider></Slider>
       <main>
         <Routes>
         <Route path="/" element={<Home></Home>}></Route>
