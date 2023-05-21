@@ -5,6 +5,8 @@ import Community from "./pages/Community";
 import Support from "./pages/Support";
 import About from "./pages/About";
 import Home from "./pages/Home";
+import AdminPage from "./pages/store/AdminPage";
+import ProductPage from "./pages/store/ProductPage";
 function App() {
   return (
     <div className="App">
@@ -15,6 +17,9 @@ function App() {
           <Route path="/community" element={<Community></Community>}></Route>
           <Route path="/support" element={<Support></Support>}></Route>
           <Route path="/about" element={<About></About>}></Route>
+            <Route path="/admin" element={<AdminPage></AdminPage>}></Route>
+            <Route path={"/ProductPage"} element={<ProductPage></ProductPage>}></Route>
+
         </Routes>
       </main>
     </div>
