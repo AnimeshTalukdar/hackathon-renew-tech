@@ -11,7 +11,7 @@ import {useEffect, useState} from "react";
 // use getImage to print the image
 // use getProduct to print the product details
 
-let product_id = "9c9ca170-8cda-494b-a0c7-7cc4229ea10b"
+let product_id = "464a908b-02bb-4c56-8dec-6ddf9635b37c";
 
 // const ImageFromOBJ = (image) => {
 //     console.log(image,typeof(image))
@@ -55,12 +55,12 @@ const ProductPage = () => {
                 <h1>{product.name}</h1>
                 <h2>{product.price}</h2>
                 <h2>{product.mrp}</h2>
-                <h2>{product.keyFeatures}</h2>
+                <h2 dangerouslySetInnerHTML={{ __html: product.keyFeatures }} />
             </div>
         </div>
         <div className="flex flex-col">
             <h1>Product Description</h1>
-            <p>{product.description}</p>
+            <h2 dangerouslySetInnerHTML={{ __html: product.description }} />
         </div>
     </div>);
 

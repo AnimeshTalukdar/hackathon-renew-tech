@@ -18,6 +18,13 @@ const insertProduct = async (product) => {
 
     if (product.additionalImage2 != undefined) product.additionalImage2 = await addImage(product.additionalImage2); else product.additionalImage2 = "";
 
+
+    // product.keyFeatures = product.keyFeatures.replaceAll("\n", "<br/>");
+    // convert keyfeatures to a unordered list
+
+
+    product.description.replaceAll("\n", "<br/>");
+
     try {
 
         const result = await database.createDocument(process.env.REACT_APP_DATABASE_ID, process.env.REACT_APP_PRODUCTS_COLLECTION_ID, pid, product);
@@ -34,6 +41,9 @@ const getProducts = async () => {
 }
 const getProduct = async (product_id) => {
     const result = await database.getDocument(process.env.REACT_APP_DATABASE_ID, process.env.REACT_APP_PRODUCTS_COLLECTION_ID, product_id);
+    // result.keyFeatures = result.keyFeatures.replaceAll("<br/>", "\n");
+    // console.log(result.keyFeatures)
+    // result.description = result.description.replaceAll("<br/>", "\n");
     // console.log(result);
     return result;
 

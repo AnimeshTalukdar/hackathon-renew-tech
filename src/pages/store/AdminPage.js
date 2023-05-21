@@ -20,13 +20,14 @@ const AddProduct = () => {
             <label>Product name</label>
             <input type="text" name="name" className="border border-gray-400 p-1"></input>
             <label>Product description</label>
-            <input type="textarea" name="description" className="border border-gray-400 p-1"></input>
+            <textarea rows={5} cols={50} name="description" className="border border-gray-400 p-1"></textarea>
             <label>Product price</label>
             <input type="number" name="price" className="border border-gray-400 p-1"></input>
             <label>Product mrp</label>
             <input type="number" name="mrp" className="border border-gray-400 p-1"></input>
             <label>Product key features</label>
-            <input type="text" name="keyFeatures" className="border border-gray-400 p-1"></input>
+            <textarea rows={5} cols={50} name="keyFeatures" className="border border-gray-400 p-1"></textarea>
+            {/*<input type="text" name="keyFeatures" className="border border-gray-400 p-1"></input>*/}
             <label>Product brand</label>
             <input type="text" name="brand" className="border border-dgray-400 p-1"></input>
             <label>Product category</label>
@@ -44,10 +45,10 @@ const AddProduct = () => {
                     onClick={() => {
                         insertProduct({
                             name: document.querySelector("input[name=name]").value,
-                            description: document.querySelector("input[name=description]").value,
+                            description: document.querySelector("textarea[name=description]").value,
                             price: document.querySelector("input[name=price]").value,
                             mrp: document.querySelector("input[name=mrp]").value,
-                            keyFeatures: document.querySelector("input[name=keyFeatures]").value,
+                            keyFeatures: document.querySelector("textarea[name=keyFeatures]").value,
                             brand: document.querySelector("input[name=brand]").value,
                             category: document.querySelector("input[name=category]").value,
                             image: document.querySelector("input[name=main-image]").files[0],
@@ -79,7 +80,8 @@ const EditProduct = () => {
             <label>Product mrp</label>
             <input type="number" name="mrp" className="border border-gray-400 p-1"></input>
             <label>Product key features</label>
-            <input type="text" name="keyFeatures" className="border border-gray-400 p-1"></input>
+            <textarea rows={5} cols={50} name="keyFeatures" className="border border-gray-400 p-1"></textarea>
+            {/*<input type="text" name="keyFeatures" className="border border-gray-400 p-1"></input>*/}
             <label>Product brand</label>
             <input type="text" name="brand" className="border border-dgray-400 p-1"></input>
             <label>Product category</label>
@@ -97,10 +99,10 @@ const EditProduct = () => {
                     onClick={() => {
                         updateProduct(document.querySelector("input[name=updateproductid]").value, {
                             name: document.querySelector("input[name=name]").value,
-                            description: document.querySelector("input[name=description]").value,
+                            description: document.querySelector("textarea[name=description]").value,
                             price: document.querySelector("input[name=price]").value,
                             mrp: document.querySelector("input[name=mrp]").value,
-                            keyFeatures: document.querySelector("input[name=keyFeatures]").value,
+                            keyFeatures: document.querySelector("textarea[name=keyFeatures]").value,
                             brand: document.querySelector("input[name=brand]").value,
                             category: document.querySelector("input[name=category]").value,
                             image: document.querySelector("input[name=main-image]").files[0],
@@ -154,6 +156,10 @@ const AdminPage = () => {
         <AddProduct></AddProduct>
 
         <EditProduct></EditProduct>
+        {/*text area rows 4 cols 50*/}
+        <textarea rows={"4"} cols={"50"}></textarea>
+
+
 
         {/*<showProducts></showProducts>*/}
 
