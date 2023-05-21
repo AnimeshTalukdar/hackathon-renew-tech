@@ -12,6 +12,7 @@ import {useEffect, useState} from "react";
 // use getProduct to print the product details
 
 let product_id = "464a908b-02bb-4c56-8dec-6ddf9635b37c";
+product_id = "980cd291-2778-465b-b5dd-30f8cf3ca8bd";
 
 // const ImageFromOBJ = (image) => {
 //     console.log(image,typeof(image))
@@ -55,7 +56,14 @@ const ProductPage = () => {
                 <h1>{product.name}</h1>
                 <h2>{product.price}</h2>
                 <h2>{product.mrp}</h2>
-                <h2 dangerouslySetInnerHTML={{ __html: product.keyFeatures }} />
+                {/*print product description as unordered list*/}
+                <ul>
+                    {product.keyFeatures && product.keyFeatures.map((feature) => {
+                        return (<li>{feature}</li>)
+                    }
+                    )}
+                </ul>
+
             </div>
         </div>
         <div className="flex flex-col">

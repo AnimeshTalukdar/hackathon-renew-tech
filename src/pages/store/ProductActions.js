@@ -21,9 +21,12 @@ const insertProduct = async (product) => {
 
     // product.keyFeatures = product.keyFeatures.replaceAll("\n", "<br/>");
     // convert keyfeatures to a unordered list
+    // convert keyfeatures to a array of string
+
+    product.keyFeatures = product.keyFeatures.split("\n");
 
 
-    product.description.replaceAll("\n", "<br/>");
+
 
     try {
 
